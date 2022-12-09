@@ -17,6 +17,9 @@
 		F650DDC72922758400BCC25A /* ApiDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650DDC62922758400BCC25A /* ApiDataProvider.swift */; };
 		F650DDC929227B8C00BCC25A /* ApiDecodableResponseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650DDC829227B8C00BCC25A /* ApiDecodableResponseRequest.swift */; };
 		F650DDCB29227CEB00BCC25A /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650DDCA29227CEB00BCC25A /* NetworkError.swift */; };
+		F68C9A8A29436BE8001D8513 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68C9A8929436BE8001D8513 /* Results.swift */; };
+		F68C9A8C29436C1B001D8513 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68C9A8B29436C1B001D8513 /* Movies.swift */; };
+		F68C9A8F29436C87001D8513 /* ListMovieRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68C9A8E29436C87001D8513 /* ListMovieRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		F650DDC62922758400BCC25A /* ApiDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiDataProvider.swift; sourceTree = "<group>"; };
 		F650DDC829227B8C00BCC25A /* ApiDecodableResponseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiDecodableResponseRequest.swift; sourceTree = "<group>"; };
 		F650DDCA29227CEB00BCC25A /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		F68C9A8929436BE8001D8513 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		F68C9A8B29436C1B001D8513 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
+		F68C9A8E29436C87001D8513 /* ListMovieRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMovieRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,7 @@
 		F601A2BB29222480009E93AF /* DataProvider */ = {
 			isa = PBXGroup;
 			children = (
+				F68C9A8D29436C75001D8513 /* Requests */,
 				F650DDBA292272A500BCC25A /* Model */,
 				F650DDB92922729100BCC25A /* Core */,
 				F650DDBB292272AC00BCC25A /* Manager */,
@@ -110,6 +117,8 @@
 		F650DDBA292272A500BCC25A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F68C9A8929436BE8001D8513 /* Results.swift */,
+				F68C9A8B29436C1B001D8513 /* Movies.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -121,6 +130,14 @@
 				F650DDC829227B8C00BCC25A /* ApiDecodableResponseRequest.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		F68C9A8D29436C75001D8513 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				F68C9A8E29436C87001D8513 /* ListMovieRequest.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,11 +246,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F68C9A8C29436C1B001D8513 /* Movies.swift in Sources */,
+				F68C9A8A29436BE8001D8513 /* Results.swift in Sources */,
 				F650DDBF2922746900BCC25A /* DecodableResponseRequest.swift in Sources */,
 				F650DDCB29227CEB00BCC25A /* NetworkError.swift in Sources */,
 				F650DDC929227B8C00BCC25A /* ApiDecodableResponseRequest.swift in Sources */,
 				F650DDC72922758400BCC25A /* ApiDataProvider.swift in Sources */,
 				F650DDC12922747E00BCC25A /* RequestMethod.swift in Sources */,
+				F68C9A8F29436C87001D8513 /* ListMovieRequest.swift in Sources */,
 				F650DDBD292272D100BCC25A /* DataProviderProtocol.swift in Sources */,
 				F650DDC3292274AC00BCC25A /* RequestProtocol.swift in Sources */,
 				F650DDC5292274C200BCC25A /* Typealias.swift in Sources */,
