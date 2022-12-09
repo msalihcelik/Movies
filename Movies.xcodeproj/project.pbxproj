@@ -21,6 +21,7 @@
 		F601A2F629222E60009E93AF /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F601A2F429222E60009E93AF /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F650DDAE292255BF00BCC25A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = F650DDAD292255BF00BCC25A /* .swiftlint.yml */; };
 		F68C9A7829377D20001D8513 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68C9A7729377D20001D8513 /* MovieViewModel.swift */; };
+		F68C9A922943787E001D8513 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68C9A912943787E001D8513 /* WebViewController.swift */; };
 		F6F325EF292653F10013EA65 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F325EE292653F10013EA65 /* MovieViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		F650DDAD292255BF00BCC25A /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		F650DDB529226D6F00BCC25A /* Movies-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Movies-Bridging-Header.h"; sourceTree = "<group>"; };
 		F68C9A7729377D20001D8513 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		F68C9A912943787E001D8513 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		F6F325EE292653F10013EA65 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				F6F325ED292653C10013EA65 /* Movie */,
+				F68C9A902943785E001D8513 /* Web */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -173,6 +176,14 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F68C9A902943785E001D8513 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				F68C9A912943787E001D8513 /* WebViewController.swift */,
+			);
+			path = Web;
 			sourceTree = "<group>";
 		};
 		F6F325ED292653C10013EA65 /* Movie */ = {
@@ -358,6 +369,7 @@
 				F601A26029221E9F009E93AF /* AppDelegate.swift in Sources */,
 				F68C9A7829377D20001D8513 /* MovieViewModel.swift in Sources */,
 				F601A26229221E9F009E93AF /* SceneDelegate.swift in Sources */,
+				F68C9A922943787E001D8513 /* WebViewController.swift in Sources */,
 				F6F325EF292653F10013EA65 /* MovieViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
