@@ -19,6 +19,9 @@
 		F650DDA72922549700BCC25A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650DDA62922549700BCC25A /* Fonts.swift */; };
 		F650DDAA292254B800BCC25A /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650DDA9292254B800BCC25A /* StringConstants.swift */; };
 		F650DDB0292258CF00BCC25A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F650DDAF292258CF00BCC25A /* Localizable.strings */; };
+		F68C9A7E2942F887001D8513 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68C9A7D2942F887001D8513 /* UIImageView+Extensions.swift */; };
+		F6F325F729265BE50013EA65 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F325F629265BE50013EA65 /* MovieCell.swift */; };
+		F6F325F929265BF80013EA65 /* MovieCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F325F829265BF80013EA65 /* MovieCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		F650DDA62922549700BCC25A /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		F650DDA9292254B800BCC25A /* StringConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		F650DDAF292258CF00BCC25A /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		F68C9A7D2942F887001D8513 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		F6F325F629265BE50013EA65 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		F6F325F829265BF80013EA65 /* MovieCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,8 @@
 		F601A2CF29222496009E93AF /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				F68C9A7C2942F870001D8513 /* Extensions */,
+				F6F325F4292658220013EA65 /* Cell */,
 				F601A2FB292241ED009E93AF /* Resources */,
 				F601A2D029222496009E93AF /* UIComponents.h */,
 			);
@@ -137,6 +145,31 @@
 				F650DDAF292258CF00BCC25A /* Localizable.strings */,
 			);
 			path = Strings;
+			sourceTree = "<group>";
+		};
+		F68C9A7C2942F870001D8513 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F68C9A7D2942F887001D8513 /* UIImageView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F6F325F4292658220013EA65 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F6F325F52926585C0013EA65 /* MovieCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F6F325F52926585C0013EA65 /* MovieCell */ = {
+			isa = PBXGroup;
+			children = (
+				F6F325F629265BE50013EA65 /* MovieCell.swift */,
+				F6F325F829265BF80013EA65 /* MovieCellModel.swift */,
+			);
+			path = MovieCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,7 +303,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6F325F929265BF80013EA65 /* MovieCellModel.swift in Sources */,
+				F6F325F729265BE50013EA65 /* MovieCell.swift in Sources */,
 				F650DD9F2922542400BCC25A /* UIImage+Icons.swift in Sources */,
+				F68C9A7E2942F887001D8513 /* UIImageView+Extensions.swift in Sources */,
 				F650DDA72922549700BCC25A /* Fonts.swift in Sources */,
 				F650DDAA292254B800BCC25A /* StringConstants.swift in Sources */,
 				F650DDA32922542400BCC25A /* UIColor+Colors.swift in Sources */,
