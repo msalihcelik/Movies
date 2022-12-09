@@ -9,21 +9,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--The Movie Database-->
         <scene sceneID="jh5-fF-Dwg">
             <objects>
-                <viewController id="ECx-hn-sW0" sceneMemberID="viewController">
+                <viewController id="ECx-hn-sW0" customClass="WebViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sTv-kN-Y8Q">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="yUo-20-4zt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="yN5-Ni-wHW"/>
+                    <tabBarItem key="tabBarItem" title="The Movie Database" image="network" catalog="system" id="yN5-Ni-wHW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQR-Px-bNq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="670" y="47"/>
+            <point key="canvasLocation" x="668" y="99"/>
         </scene>
         <!--Popular Movies-->
         <scene sceneID="WSn-du-Yfq">
@@ -121,6 +121,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="network" catalog="system" width="128" height="123"/>
         <image name="square.grid.2x2.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
