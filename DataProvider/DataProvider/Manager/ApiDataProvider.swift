@@ -35,15 +35,29 @@ public struct ApiDataProvider: DataProviderProtocol {
         return urlRequest
     }
     
-    public func request<T: DecodableResponseRequest>(for request: T, result: DataProviderResult<T.ResponseType>? = nil) {
+    public func request<T: Codable>(url: String = "",
+                                    scheme: String = "https",
+                                    host: String = "",
+                                    path: String = "",
+                                    method: RequestMethod = .get,
+                                    headers: RequestHeaders = [:],
+                                    parameters: RequestParameters = [:],
+                                    result: ((Result<T, Error>) -> Void)?) {
         do {
-            let request = try createRequest(request)
+            let requestData = BaseRequest(url: url,
+                                          scheme: scheme,
+                                          host: host,
+                                          path: path,
+                                          method: method,
+                                          headers: headers,
+                                          parameters: parameters)
+            let request = try createRequest(requestData)
             URLSession.shared.dataTask(with: request) { data, _, error in
                 if let error = error { result?(.failure(error)) }
                 guard let data = data else { return }
                 let decoder = JSONDecoder()
                 do {
-                    let decodedData = try decoder.decode(T.ResponseType.self, from: data)
+                    let decodedData = try decoder.decode(T.self, from: data)
                     result?(.success(decodedData))
                 } catch {
                     result?(.failure(NetworkError.JSONDecodeError))

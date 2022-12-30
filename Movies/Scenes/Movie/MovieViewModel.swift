@@ -36,9 +36,12 @@ final class MovieViewModel: MovieViewProtocol {
 extension MovieViewModel {
     
     func fetchMovies(page: Int) {
-        let request = ListMovieRequest(page: page)
         let url = "https://image.tmdb.org/t/p/w500"
-        ApiDataProvider.shared.request(for: request) { [weak self] (result) in
+        ApiDataProvider.shared.request(host: "api.themoviedb.org",
+                                       path: "/3/movie/popular",
+                                       method: .post,
+                                       parameters: ["page": page,
+                                                    "api_key": Constants.apiKey]) { [weak self] (result: Result<Movies, Error>) in
             guard let self = self else { return }
             switch result {
             case .success(let response):

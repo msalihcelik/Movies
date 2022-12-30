@@ -5,11 +5,13 @@
 //  Created by Celik, Salih on 14.11.2022.
 //
 
-public typealias DataProviderResult<T: Decodable> = ((Result<T, Error>) -> Void)
-
 public protocol DataProviderProtocol {
-    func request<T: DecodableResponseRequest>(
-        for request: T,
-        result: DataProviderResult<T.ResponseType>?
-    )
+    func request<T: Codable>(url: String,
+                             scheme: String,
+                             host: String,
+                             path: String,
+                             method: RequestMethod,
+                             headers: RequestHeaders,
+                             parameters: RequestParameters,
+                             result: ((Result<T, Error>) -> Void)?)
 }
