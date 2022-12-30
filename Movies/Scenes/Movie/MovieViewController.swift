@@ -10,6 +10,8 @@ class MovieViewController: UIViewController {
     @IBOutlet weak var movieCollectionView: UICollectionView!
     var viewModel = MovieViewModel()
     
+    private let refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureContents()
@@ -24,6 +26,22 @@ class MovieViewController: UIViewController {
                 self.movieCollectionView.reloadData()
             }
         }
+        viewModel.showTryAgainButton = { [weak self] in
+            guard let self = self else { return }
+            let button = TryAgainButton()
+            button.addTarget(self, action: #selector(self.tryAgainButtonTapped), for: .touchUpInside)
+            self.view.addSubview(button)
+            button.centerInSuperview()
+            self.view.bringSubviewToFront(button)
+        }
+        viewModel.hideTryAgainButton = { [weak self] in
+            guard let self = self else { return }
+            self.view.subviews.filter({ $0 is TryAgainButton }).forEach({ $0.removeFromSuperview() })
+        }
+        viewModel.tryAgainButtonAction = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.fetchMovies(page: 1)
+        }
     }
 }
 
@@ -33,6 +51,28 @@ extension MovieViewController {
     private func configureContents() {
         movieCollectionView.delegate = self
         movieCollectionView.dataSource = self
+        configureRefreshControl()
+    }
+    
+    private func configureRefreshControl() {
+        refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+        refreshControl.tintColor = .black
+        movieCollectionView.refreshControl = refreshControl
+    }
+}
+
+// MARK: - Actions
+extension MovieViewController {
+    
+    @objc
+    func tryAgainButtonTapped() {
+        viewModel.tryAgainButtonTapped()
+    }
+    
+    @objc
+    private func didPullToRefresh() {
+        viewModel.fetchMovies(page: 1)
+        refreshControl.endRefreshing()
     }
 }
 

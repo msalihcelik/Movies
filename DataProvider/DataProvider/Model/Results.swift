@@ -5,7 +5,7 @@
 //  Created by Celik, Salih on 9.12.2022.
 //
 
-public struct Results: Decodable {
+public struct Results: Codable {
     
     public let adult: Bool
     public let backdropPath: String?

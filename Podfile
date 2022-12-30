@@ -13,6 +13,7 @@ $TinyConstraints = pod 'TinyConstraints'
 # Helper
 $SwiftGen = pod 'SwiftGen', '~> 6.1'
 $Kingfisher = pod 'Kingfisher'
+$SwiftEntryKit = pod 'SwiftEntryKit', '~> 2.0'
 
 workspace 'Movies'
 
@@ -23,6 +24,7 @@ target 'Movies' do
   # Pods for Movies
   $SwiftLint
   $TinyConstraints
+  $SwiftEntryKit
 
 end
 
@@ -51,6 +53,7 @@ target 'UIComponents' do
   $SwiftGen
   $TinyConstraints
   $Kingfisher
+  $SwiftEntryKit
 
 end
 

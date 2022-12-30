@@ -14,7 +14,9 @@ public enum L10n {
   ///   UIComponents
   /// 
   ///   Created by Celik, Salih on 14.11.2022.
-  public static let error = L10n.tr("Localizable", "error", fallback: "Hata")
+  public static let invalidError = L10n.tr("Localizable", "invalidError", fallback: "Invalid Error")
+  /// Try Again
+  public static let tryAgain = L10n.tr("Localizable", "tryAgain", fallback: "Try Again")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

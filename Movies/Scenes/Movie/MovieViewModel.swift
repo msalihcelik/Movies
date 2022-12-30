@@ -13,12 +13,19 @@ protocol MovieViewDataSource {
 
 protocol MovieViewEventSource {
     var didSuccessMovies: VoidClosure? { get set }
+    var showTryAgainButton: VoidClosure? { get set }
+    var hideTryAgainButton: VoidClosure? { get set }
+    var tryAgainButtonAction: VoidClosure? { get set }
 }
 
 protocol MovieViewProtocol: MovieViewDataSource, MovieViewEventSource { }
 
 final class MovieViewModel: MovieViewProtocol {
-
+    
+    var showTryAgainButton: VoidClosure?
+    var hideTryAgainButton: VoidClosure?
+    var tryAgainButtonAction: VoidClosure?
+    
     var didSuccessMovies: VoidClosure?
     var cellItems: [MovieCellModel] = []
     
@@ -36,9 +43,13 @@ final class MovieViewModel: MovieViewProtocol {
 extension MovieViewModel {
     
     func fetchMovies(page: Int) {
-        let request = ListMovieRequest(page: page)
         let url = "https://image.tmdb.org/t/p/w500"
-        ApiDataProvider.shared.request(for: request) { [weak self] (result) in
+        ApiDataProvider.shared.request(scheme: "https",
+                                       host: "api.themoviedb.org",
+                                       path: "/3/movie/popular",
+                                       method: .post,
+                                       parameters: ["page": page,
+                                                    "api_key": Constants.apiKey]) { [weak self] (result: Result<Movies, Error>) in
             guard let self = self else { return }
             switch result {
             case .success(let response):
@@ -49,9 +60,22 @@ extension MovieViewModel {
                 })
                 self.cellItems.append(contentsOf: cellItems)
                 self.didSuccessMovies?()
-            case .failure:
-                break
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.showTryAgainButton?()
+                }
+                let error = (error as? NetworkError)?.rawValue ?? L10n.invalidError
+                ToastPresenter.showWarningToast(text: error)
             }
         }
+    }
+}
+
+// MARK: - Actions
+extension MovieViewModel {
+    
+    func tryAgainButtonTapped() {
+        self.tryAgainButtonAction?()
+        self.hideTryAgainButton?()
     }
 }

@@ -5,7 +5,7 @@
 //  Created by Celik, Salih on 9.12.2022.
 //
 
-public struct Movies: Decodable {
+public struct Movies: Codable {
     
     public let page: Int
     public let results: [Results]

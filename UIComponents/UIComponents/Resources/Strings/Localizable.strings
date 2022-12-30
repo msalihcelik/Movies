@@ -6,4 +6,5 @@
   
 */
 
-"error" = "Hata";
+"invalidError" = "Invalid Error";
+"tryAgain" = "Try Again";
