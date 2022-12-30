@@ -21,7 +21,7 @@ protocol MovieViewEventSource {
 protocol MovieViewProtocol: MovieViewDataSource, MovieViewEventSource { }
 
 final class MovieViewModel: MovieViewProtocol {
-
+    
     var showTryAgainButton: VoidClosure?
     var hideTryAgainButton: VoidClosure?
     var tryAgainButtonAction: VoidClosure?
@@ -44,7 +44,8 @@ extension MovieViewModel {
     
     func fetchMovies(page: Int) {
         let url = "https://image.tmdb.org/t/p/w500"
-        ApiDataProvider.shared.request(host: "api.themoviedb.org",
+        ApiDataProvider.shared.request(scheme: "https",
+                                       host: "api.themoviedb.org",
                                        path: "/3/movie/popular",
                                        method: .post,
                                        parameters: ["page": page,

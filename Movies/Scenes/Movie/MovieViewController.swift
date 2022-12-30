@@ -10,6 +10,8 @@ class MovieViewController: UIViewController {
     @IBOutlet weak var movieCollectionView: UICollectionView!
     var viewModel = MovieViewModel()
     
+    private let refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureContents()
@@ -49,6 +51,13 @@ extension MovieViewController {
     private func configureContents() {
         movieCollectionView.delegate = self
         movieCollectionView.dataSource = self
+        configureRefreshControl()
+    }
+    
+    private func configureRefreshControl() {
+        refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+        refreshControl.tintColor = .black
+        movieCollectionView.refreshControl = refreshControl
     }
 }
 
@@ -58,6 +67,12 @@ extension MovieViewController {
     @objc
     func tryAgainButtonTapped() {
         viewModel.tryAgainButtonTapped()
+    }
+    
+    @objc
+    private func didPullToRefresh() {
+        viewModel.fetchMovies(page: 1)
+        refreshControl.endRefreshing()
     }
 }
 
