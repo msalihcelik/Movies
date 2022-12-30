@@ -13,12 +13,19 @@ protocol MovieViewDataSource {
 
 protocol MovieViewEventSource {
     var didSuccessMovies: VoidClosure? { get set }
+    var showTryAgainButton: VoidClosure? { get set }
+    var hideTryAgainButton: VoidClosure? { get set }
+    var tryAgainButtonAction: VoidClosure? { get set }
 }
 
 protocol MovieViewProtocol: MovieViewDataSource, MovieViewEventSource { }
 
 final class MovieViewModel: MovieViewProtocol {
 
+    var showTryAgainButton: VoidClosure?
+    var hideTryAgainButton: VoidClosure?
+    var tryAgainButtonAction: VoidClosure?
+    
     var didSuccessMovies: VoidClosure?
     var cellItems: [MovieCellModel] = []
     
@@ -52,9 +59,22 @@ extension MovieViewModel {
                 })
                 self.cellItems.append(contentsOf: cellItems)
                 self.didSuccessMovies?()
-            case .failure:
-                break
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.showTryAgainButton?()
+                }
+                let error = (error as? NetworkError)?.rawValue ?? L10n.invalidError
+                ToastPresenter.showWarningToast(text: error)
             }
         }
+    }
+}
+
+// MARK: - Actions
+extension MovieViewModel {
+    
+    func tryAgainButtonTapped() {
+        self.tryAgainButtonAction?()
+        self.hideTryAgainButton?()
     }
 }

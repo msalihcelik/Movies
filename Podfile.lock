@@ -1,11 +1,13 @@
 PODS:
   - Kingfisher (6.3.1)
+  - SwiftEntryKit (2.0.0)
   - SwiftGen (6.6.2)
   - SwiftLint (0.49.1)
   - TinyConstraints (4.0.2)
 
 DEPENDENCIES:
   - Kingfisher
+  - SwiftEntryKit (~> 2.0)
   - SwiftGen (~> 6.1)
   - SwiftLint
   - TinyConstraints
@@ -13,16 +15,18 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Kingfisher
+    - SwiftEntryKit
     - SwiftGen
     - SwiftLint
     - TinyConstraints
 
 SPEC CHECKSUMS:
   Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
+  SwiftEntryKit: 61b5fa36f34a97dd8013e48a7345bc4c4720be9a
   SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
   TinyConstraints: 7b7ccc0c485bb3bb47082138ff28bc33cd49897f
 
-PODFILE CHECKSUM: d0c77402c1b51b210eac0e7e50a18f8dfe26bd1d
+PODFILE CHECKSUM: 49d189f357bb2520612e6f8fe9fe1fb166f19c50
 
 COCOAPODS: 1.11.3

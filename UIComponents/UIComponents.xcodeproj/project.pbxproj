@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		77D6509972AA4F8BFABC2755 /* Pods_UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4FEFE6E24B39502CA18B155 /* Pods_UIComponents.framework */; };
 		F601A2D129222496009E93AF /* UIComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = F601A2D029222496009E93AF /* UIComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F628B744295EE07F00174FE8 /* ToastWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F628B743295EE07F00174FE8 /* ToastWarningView.swift */; };
+		F628B746295EE1CE00174FE8 /* ToastPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F628B745295EE1CE00174FE8 /* ToastPresenter.swift */; };
+		F628B749295EF3E600174FE8 /* TryAgainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F628B748295EF3E600174FE8 /* TryAgainButton.swift */; };
 		F650DD9E2922542400BCC25A /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650DD972922542400BCC25A /* Assets.swift */; };
 		F650DD9F2922542400BCC25A /* UIImage+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650DD982922542400BCC25A /* UIImage+Icons.swift */; };
 		F650DDA02922542400BCC25A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F650DD992922542400BCC25A /* Colors.xcassets */; };
@@ -30,6 +33,9 @@
 		E4FEFE6E24B39502CA18B155 /* Pods_UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F601A2CD29222496009E93AF /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F601A2D029222496009E93AF /* UIComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponents.h; sourceTree = "<group>"; };
+		F628B743295EE07F00174FE8 /* ToastWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastWarningView.swift; sourceTree = "<group>"; };
+		F628B745295EE1CE00174FE8 /* ToastPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastPresenter.swift; sourceTree = "<group>"; };
+		F628B748295EF3E600174FE8 /* TryAgainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryAgainButton.swift; sourceTree = "<group>"; };
 		F650DD8F2922534C00BCC25A /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		F650DD972922542400BCC25A /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		F650DD982922542400BCC25A /* UIImage+Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Icons.swift"; sourceTree = "<group>"; };
@@ -98,6 +104,8 @@
 		F601A2CF29222496009E93AF /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				F628B747295EF3D700174FE8 /* Button */,
+				F628B742295EE05B00174FE8 /* Toast */,
 				F68C9A7C2942F870001D8513 /* Extensions */,
 				F6F325F4292658220013EA65 /* Cell */,
 				F601A2FB292241ED009E93AF /* Resources */,
@@ -114,6 +122,23 @@
 				F650DD962922542400BCC25A /* Assets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F628B742295EE05B00174FE8 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				F628B745295EE1CE00174FE8 /* ToastPresenter.swift */,
+				F628B743295EE07F00174FE8 /* ToastWarningView.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		F628B747295EF3D700174FE8 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				F628B748295EF3E600174FE8 /* TryAgainButton.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		F650DD962922542400BCC25A /* Assets */ = {
@@ -304,9 +329,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6F325F929265BF80013EA65 /* MovieCellModel.swift in Sources */,
+				F628B746295EE1CE00174FE8 /* ToastPresenter.swift in Sources */,
+				F628B744295EE07F00174FE8 /* ToastWarningView.swift in Sources */,
 				F6F325F729265BE50013EA65 /* MovieCell.swift in Sources */,
 				F650DD9F2922542400BCC25A /* UIImage+Icons.swift in Sources */,
 				F68C9A7E2942F887001D8513 /* UIImageView+Extensions.swift in Sources */,
+				F628B749295EF3E600174FE8 /* TryAgainButton.swift in Sources */,
 				F650DDA72922549700BCC25A /* Fonts.swift in Sources */,
 				F650DDAA292254B800BCC25A /* StringConstants.swift in Sources */,
 				F650DDA32922542400BCC25A /* UIColor+Colors.swift in Sources */,
